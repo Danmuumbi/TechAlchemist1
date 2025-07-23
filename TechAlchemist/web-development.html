@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design & Development Services | TechAlchemist Solutions</title>
+    <link rel="icon" type="image/png" href="TechAlchemist Solns Favicon[1].png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: white;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background-color: #c0392b;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-40 {
+            margin-bottom: 40px;
+        }
+        
+        /* Hero Section */
+        .web-dev-hero {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(52, 152, 219, 0.8) 100%);
+            color: white;
+            overflow: hidden;
+        }
+        
+        .web-dev-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+        
+        /* Service Overview */
+        .service-overview {
+            background-color: white;
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .overview-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 40px 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .overview-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .overview-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        /* Our Process */
+        .our-process {
+            background-color: #f9f9f9;
+        }
+        
+        .process-steps {
+            position: relative;
+            max-width: 1000px;
+            margin: 60px auto 0;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: var(--secondary);
+        }
+        
+        .process-step {
+            position: relative;
+            margin-bottom: 60px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+        }
+        
+        .process-step:nth-child(odd) {
+            margin-right: 50%;
+            text-align: right;
+        }
+        
+        .process-step:nth-child(odd)::before {
+            right: -60px;
+        }
+        
+        .process-step:nth-child(even) {
+            margin-left: 50%;
+        }
+        
+        .process-step:nth-child(even)::before {
+            left: -60px;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .process-step:nth-child(odd) .step-number {
+            right: -70px;
+        }
+        
+        .process-step:nth-child(even) .step-number {
+            left: -70px;
+        }
+        
+        /* Technologies */
+        .technologies {
+            background-color: white;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .tech-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
+            background-color: var(--light);
+            transition: transform 0.3s ease;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .tech-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        
+        /* Portfolio */
+        .portfolio {
+            background-color: #f9f9f9;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        /* CTA Section */
+        .web-dev-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .web-dev-cta h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .web-dev-cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .web-dev-hero {
+                height: auto;
+                padding: 120px 0;
+                min-height: auto;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .process-steps::before {
+                left: 30px;
+            }
+            
+            .process-step {
+                margin-left: 60px !important;
+                margin-right: 0 !important;
+                text-align: left !important;
+            }
+            
+            .process-step::before {
+                left: -50px !important;
+                right: auto !important;
+            }
+            
+            .process-step:nth-child(odd) .step-number,
+            .process-step:nth-child(even) .step-number {
+                left: -60px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .tech-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Header Styles */
+        :root {
+            --primary: #64ffda;
+            --primary-dark: #0a192f;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .header-container {
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-scrolled {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-item {
+            padding: 10px 20px;
+        }
+        
+        .dropdown-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+        }
+        
+        .dropdown-link:hover {
+            color: var(--primary);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-right: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .nav-item {
+                margin-left: 20px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px;
+                transition: all 0.5s ease;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-item {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: none;
+                padding: 10px 0 0 15px;
+                display: none;
+            }
+            
+            .nav-item:hover .dropdown-menu {
+                display: block;
+            }
+            
+            .header-actions {
+                margin: 30px 0 0 0;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-content {
+                height: 70px;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .btn, .btn-outline {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .nav-menu {
+                top: 70px;
+                height: calc(100vh - 70px);
+            }
+        }
+    </style>
+
+
+
+        <!-- Header -->
+    <header class="header-container" id="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="TechAlchemist Solns Favicon[1].png" alt="TechAlchemist Logo" class="logo-img">
+                <span class="logo-text">Tech<span>Alchemist</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="web-development.html" class="dropdown-link">Web Development</a></li>
+                            <li class="dropdown-item"><a href="Social Media Marketing.html" class="dropdown-link">Social Media Marketing</a></li>
+                            <li class="dropdown-item"><a href="Networking & Internet Setup.html" class="dropdown-link">Networking & Internet Setup</a></li>
+                            <li class="dropdown-item"><a href="Search Engine Optimization.html" class="dropdown-link">Search Engine Optimization</a></li>
+                            <li class="dropdown-item"><a href="Event Coverage & Media.html" class="dropdown-link">Event Coverage & Media</a></li>
+                            <li class="dropdown-item"><a href="CCTV & Security Systems.html" class="dropdown-link">CCTV & Security Systems</a></li>
+                            <li class="dropdown-item"><a href="Server Setup & IT Support.html" class="dropdown-link">Server Setup & IT Support</a></li>
+                            <li class="dropdown-item"><a href="Staff & Digital Training.html" class="dropdown-link">Staff & Digital Training</a></li>
+                            <li class="dropdown-item"><a href="E-commerce & Payments.html" class="dropdown-link">E-commerce & Payments</a></li>
+                            <li class="dropdown-item"><a href="Branding & Design.html" class="dropdown-link">Branding & Design</a></li>
+                            <li class="dropdown-item"><a href="More-Services.html" class="dropdown-link">More Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="industries.html" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="industries.html" class="dropdown-link">Financial Services</a></li>
+                            <li class="dropdown-item"><a href="industries.html" class="dropdown-link">Healthcare</a></li>
+                            <li class="dropdown-item"><a href="industries.html" class="dropdown-link">Education</a></li>
+                            <li class="dropdown-item"><a href="industries.html" class="dropdown-link">Government</a></li>
+                            <li class="dropdown-item"><a href="industries.html" class="dropdown-link">Enterprise</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="case-studies.html" class="nav-link">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="header-actions">
+                    <a href="contact.html#consultation" class="btn btn-outline">Get Consultation</a>
+                    <a href="tel:+254713160899" class="btn">Call Us</a>
+                </div>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 992) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+
+    <!-- Web Development Hero Section -->
+    <section class="web-dev-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Web Design & Development</h1>
+                <p>Custom-built websites, portals, e-commerce platforms, and online booking systems engineered for performance, security, and scalability.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-accent">Start Your Project</a>
+                    <a href="#portfolio" class="btn">View Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Overview Section -->
+    <section class="service-overview">
+        <div class="container">
+            <h2 class="text-center mb-40">Engineering Digital Experiences That Convert</h2>
+            <p class="text-center">At TechAlchemist Solutions, we don't just build websites - we engineer digital experiences that drive business growth. Our web development process combines aesthetic design with technical excellence to create solutions that are beautiful, functional, and built to last.</p>
+            
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive UI</h3>
+                    <p>Fully responsive designs that adapt seamlessly to any device, from desktop to mobile, ensuring optimal user experience across all platforms.</p>
+                </div>
+                
+                <div class="overview-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>E-commerce</h3>
+                    <p>Secure, scalable online stores with payment gateways, inventory management, and conversion-optimized checkout flows.</p>
+                </div>
+                
+                <div class="overview-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>CMS Integration</h3>
+                    <p>User-friendly content management systems that empower your team to update content without technical expertise.</p>
+                </div>
+                
+                <div class="overview-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Performance</h3>
+                    <p>Lightning-fast page loads through code optimization, caching strategies, and CDN integration for superior user experience.</p>
+                </div>
+                
+                <div class="overview-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security</h3>
+                    <p>Enterprise-grade security measures including SSL, firewalls, and regular audits to protect your data and customers.</p>
+                </div>
+                
+                <div class="overview-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>SEO Ready</h3>
+                    <p>Built with search engine optimization in mind, following best practices for structure, speed, and semantic markup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="our-process">
+        <div class="container">
+            <h2 class="text-center mb-40">Our Engineering Process</h2>
+            <p class="text-center">We approach web development with the precision of software engineering, ensuring every project meets our exacting standards for quality, performance, and maintainability.</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery & Requirements Analysis</h3>
+                    <p>We conduct in-depth interviews and workshops to understand your business objectives, target audience, and technical requirements. This phase includes competitive analysis and technical feasibility studies.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Information Architecture</h3>
+                    <p>Our team designs the structural foundation of your website, creating sitemaps, wireframes, and user flows that optimize navigation and conversion paths.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>UI/UX Design</h3>
+                    <p>We craft pixel-perfect, brand-aligned interfaces with a focus on usability and aesthetic appeal. Our designs are tested for accessibility and user experience before development begins.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Development</h3>
+                    <p>Using modern frameworks and best practices, we build your website with clean, maintainable code. Our development includes rigorous testing at every stage.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Quality Assurance</h3>
+                    <p>We conduct comprehensive testing including functionality checks, cross-browser testing, performance audits, and security assessments before launch.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Deployment & Optimization</h3>
+                    <p>After launch, we monitor performance, gather user feedback, and implement continuous improvements to ensure your website remains effective.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies">
+        <div class="container">
+            <h2 class="text-center mb-40">Our Technology Stack</h2>
+            <p class="text-center">We leverage cutting-edge technologies tailored to your project requirements, ensuring optimal performance, security, and scalability.</p>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                    <h4>React</h4>
+                </div>
+                
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
+                    <h4>Next.js</h4>
+                </div>
+                
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    <h4>Node.js</h4>
+                </div>
+                
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                    <h4>TypeScript</h4>
+                </div>
+                
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS">
+                    <h4>Tailwind CSS</h4>
+                </div>
+                
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress">
+                    <h4>WordPress</h4>
+                </div>
+                
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shopify/shopify-original.svg" alt="Shopify">
+                    <h4>Shopify</h4>
+                </div>
+                
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
+                    <h4>Firebase</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="text-center mb-40">Web Development Showcase</h2>
+            <p class="text-center">Explore some of our recent web development projects that demonstrate our engineering approach and design excellence.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="E-commerce Platform">
+                    <div class="portfolio-overlay">
+                        <h3>Nexus Commerce</h3>
+                        <p>High-performance e-commerce platform with custom CMS</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Healthcare Portal">
+                    <div class="portfolio-overlay">
+                        <h3>MediCare Portal</h3>
+                        <p>HIPAA-compliant patient management system</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="SaaS Dashboard">
+                    <div class="portfolio-overlay">
+                        <h3>AnalytiX SaaS</h3>
+                        <p>Data analytics dashboard with real-time visualizations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="web-dev-cta" id="contact">
+        <div class="container">
+            <h2>Ready to Engineer Your Digital Presence?</h2>
+            <p>Whether you need a simple brochure website or a complex web application, our team has the expertise to deliver a solution that meets your technical requirements and business objectives.</p>
+            <a href="#" class="btn btn-accent">Start Your Web Project</a>
+        </div>
+    </section>
+
+
+    
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Footer Styles */
+        :root {
+            --primary: #64ffda;
+            --primary-dark: #0a192f;
+            --dark: #172a45;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .footer-container {
+            width: 100%;
+            background-color: #0a192f;
+           
+            color: white;
+            padding: 80px 0 0;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .footer-logo-text span {
+            color: var(--primary);
+        }
+        
+        .footer-about p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-heading:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-link-item {
+            margin-bottom: 15px;
+        }
+        
+        .footer-link {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+        }
+        
+        .footer-link i {
+            margin-right: 10px;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+        
+        .footer-contact-info {
+            list-style: none;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        .contact-text {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        .contact-text a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-newsletter p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 0.95rem;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+        }
+        
+        .newsletter-btn {
+            padding: 0 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 25px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-bottom-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-copyright {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .footer-legal-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .footer-legal-link {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-legal-link:hover {
+            color: var(--primary);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-heading {
+                margin-bottom: 20px;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+            }
+            
+            .footer-legal-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-container {
+                padding: 60px 0 0;
+            }
+            
+            .footer-bottom {
+                padding: 20px 0;
+                margin-top: 40px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-btn {
+                border-radius: 5px;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+
+
+        <!-- Footer -->
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="TechAlchemist Solns Favicon[1].png" alt="TechAlchemist Logo" class="footer-logo-img">
+                    <span class="footer-logo-text">Tech<span>Alchemist</span></span>
+                </div>
+                <p>Engineering digital excellence through rigorous application of computer science principles and systems thinking. We transform complex challenges into robust, scalable solutions.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links-container">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li class="footer-link-item"><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li class="footer-link-item"><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li class="footer-link-item"><a href="case-studies.html" class="footer-link"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+                    <li class="footer-link-item"><a href="blog.html" class="footer-link"><i class="fas fa-chevron-right"></i> Insights</a></li>
+                    <li class="footer-link-item"><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-services-container">
+                <h3 class="footer-heading">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="web-development.html" class="footer-link"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                    <li class="footer-link-item"><a href="Social Media Marketing.html" class="footer-link"><i class="fas fa-chevron-right"></i> Social Media Marketing</a></li>
+                    <li class="footer-link-item"><a href="Search Engine Optimization.html" class="footer-link"><i class="fas fa-chevron-right"></i> Search Engine Optimization</a></li>
+                    <li class="footer-link-item"><a href="CCTV & Security Systems.html" class="footer-link"><i class="fas fa-chevron-right"></i> CCTV & Security Systems</a></li>
+                    <li class="footer-link-item"><a href="Branding & Design.html" class="footer-link"><i class="fas fa-chevron-right"></i> Branding & Design</a></li>
+                    <li class="footer-link-item"><a href="More-Services.html" class="footer-link"><i class="fas fa-chevron-right"></i> More Services</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact-container">
+                <h3 class="footer-heading">Contact Us</h3>
+                <ul class="footer-contact-info">
+                    <li class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <div class="contact-text">
+                            Nairobi, Kenya<br>
+                            P.O. Box 12345-00100
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-phone-alt contact-icon"></i>
+                        <div class="contact-text">
+                            <a href="tel:+254713160899">+254 713 160 899</a><br>
+                            <a href="tel:+254720987654">+254 720 987 654</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div class="contact-text">
+                            <a href="mailto:info@techalchemist.co.ke">info@techalchemist.co.ke</a><br>
+                            <a href="mailto:support@techalchemist.co.ke">support@techalchemist.co.ke</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-clock contact-icon"></i>
+                        <div class="contact-text">
+                           24/7 Customer Support<br>
+                            Mon - Fri: 8:00 AM - 6:00 PM<br>
+                            Sat - Sun: 10:00 AM - 4:00 PM
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+               
+                <!-- <h3 class="footer-heading">Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest engineering insights, case studies, and technology updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p><small>We respect your privacy. Unsubscribe at any time.</small></p> -->
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-copyright">&copy; 2023 TechAlchemist Solutions. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#" class="footer-legal-link">Privacy Policy</a>
+                    <a href="#" class="footer-legal-link">Terms of Service</a>
+                    <a href="#" class="footer-legal-link">Cookies Policy</a>
+                    <a href="#" class="footer-legal-link">Security</a>
+                    <a href="#" class="footer-legal-link">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                // Here you would typically send the email to your server
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = '';
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

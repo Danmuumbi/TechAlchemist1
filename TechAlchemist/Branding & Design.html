@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding & Design | TechAlchemist Solutions</title>
+    <link rel="icon" type="image/png" href="TechAlchemist Solns Favicon[1].png">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #3a86ff;
+            --primary-dark: #2667cc;
+            --secondary: #8338ec;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            text-align: center;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.9) 0%, rgba(131, 56, 236, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Process Section */
+        .process {
+            background-color: var(--light);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 30px;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: var(--light);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            color: var(--white);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .testimonials h2 {
+            color: var(--white);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .testimonial-content {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h2 {
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta .btn {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        .cta .btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .cta .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                height: auto;
+                min-height: auto;
+                padding: 120px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 50px 0;
+            }
+            
+            .hero {
+                padding: 100px 0;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 40px 0;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Header Styles */
+        :root {
+            --primary: #64ffda;
+            --primary-dark: #0a192f;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .header-container {
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-scrolled {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-item {
+            padding: 10px 20px;
+        }
+        
+        .dropdown-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+        }
+        
+        .dropdown-link:hover {
+            color: var(--primary);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-right: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .nav-item {
+                margin-left: 20px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px;
+                transition: all 0.5s ease;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-item {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: none;
+                padding: 10px 0 0 15px;
+                display: none;
+            }
+            
+            .nav-item:hover .dropdown-menu {
+                display: block;
+            }
+            
+            .header-actions {
+                margin: 30px 0 0 0;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-content {
+                height: 70px;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .btn, .btn-outline {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .nav-menu {
+                top: 70px;
+                height: calc(100vh - 70px);
+            }
+        }
+    </style>
+
+
+
+        <!-- Header -->
+    <header class="header-container" id="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="TechAlchemist Solns Favicon[1].png" alt="TechAlchemist Logo" class="logo-img">
+                <span class="logo-text">Tech<span>Alchemist</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="web-development.html" class="dropdown-link">Web Development</a></li>
+                            <li class="dropdown-item"><a href="Social Media Marketing.html" class="dropdown-link">Social Media Marketing</a></li>
+                            <li class="dropdown-item"><a href="Networking & Internet Setup.html" class="dropdown-link">Networking & Internet Setup</a></li>
+                            <li class="dropdown-item"><a href="Search Engine Optimization.html" class="dropdown-link">Search Engine Optimization</a></li>
+                            <li class="dropdown-item"><a href="Event Coverage & Media.html" class="dropdown-link">Event Coverage & Media</a></li>
+                            <li class="dropdown-item"><a href="CCTV & Security Systems.html" class="dropdown-link">CCTV & Security Systems</a></li>
+                            <li class="dropdown-item"><a href="Server Setup & IT Support.html" class="dropdown-link">Server Setup & IT Support</a></li>
+                            <li class="dropdown-item"><a href="Staff & Digital Training.html" class="dropdown-link">Staff & Digital Training</a></li>
+                            <li class="dropdown-item"><a href="E-commerce & Payments.html" class="dropdown-link">E-commerce & Payments</a></li>
+                            <li class="dropdown-item"><a href="Branding & Design.html" class="dropdown-link">Branding & Design</a></li>
+                            <li class="dropdown-item"><a href="More-Services.html" class="dropdown-link">More Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="industries.html" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="industries.html" class="dropdown-link">Financial Services</a></li>
+                            <li class="dropdown-item"><a href="industries.html" class="dropdown-link">Healthcare</a></li>
+                            <li class="dropdown-item"><a href="industries.html" class="dropdown-link">Education</a></li>
+                            <li class="dropdown-item"><a href="industries.html" class="dropdown-link">Government</a></li>
+                            <li class="dropdown-item"><a href="industries.html" class="dropdown-link">Enterprise</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="case-studies.html" class="nav-link">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="header-actions">
+                    <a href="contact.html#consultation" class="btn btn-outline">Get Consultation</a>
+                    <a href="tel:+254713160899" class="btn">Call Us</a>
+                </div>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 992) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-digital-design-1178-large.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Branding & Design</h1>
+                <p>Systematic brand identities engineered for recognition and recall. Our designs are tested for memorability and emotional impact before final delivery.</p>
+                <a href="#contact" class="btn">Start Your Brand Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branding Process -->
+    <section class="process">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Scientific Branding Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery & Research</h3>
+                    <p>We analyze your market, competitors, and audience to identify unique opportunities for brand differentiation and emotional connection.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Concept Development</h3>
+                    <p>Our team creates multiple design directions informed by psychological principles of color, shape, and typography for maximum impact.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Testing & Refinement</h3>
+                    <p>We conduct A/B testing and focus groups to measure memorability and emotional response, refining until we achieve optimal results.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>System Implementation</h3>
+                    <p>Your final brand system includes comprehensive guidelines for consistent application across all touchpoints and media.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branding Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="text-center mb-5">Comprehensive Branding Solutions</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Logo Design">
+                    </div>
+                    <div class="service-content">
+                        <h3>Logo & Visual Identity</h3>
+                        <p>Distinctive logos engineered for instant recognition across all platforms and sizes, with full brand guidelines.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Brand Strategy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Brand Strategy</h3>
+                        <p>Data-driven positioning and messaging frameworks that resonate with your target audience.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Marketing Materials">
+                    </div>
+                    <div class="service-content">
+                        <h3>Marketing Collateral</h3>
+                        <p>Professionally designed business cards, letterheads, brochures, and promotional materials.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Digital Branding">
+                    </div>
+                    <div class="service-content">
+                        <h3>Digital Branding</h3>
+                        <p>Social media templates, email signatures, and digital assets that maintain brand consistency online.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1542744173-05336a8b7d96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Packaging Design">
+                    </div>
+                    <div class="service-content">
+                        <h3>Packaging Design</h3>
+                        <p>Shelf-stopping packaging that communicates your brand values at first glance.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Brand Refresh">
+                    </div>
+                    <div class="service-content">
+                        <h3>Brand Refresh</h3>
+                        <p>Modernizing existing brands while maintaining equity and recognition.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <div class="container">
+            <h2 class="text-center mb-5">Branding That Makes an Impact</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Brand Project 1" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Nexa Financial</h3>
+                        <p>Complete brand identity for fintech startup</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Brand Project 2" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>VitaFoods</h3>
+                        <p>Packaging and brand system for organic food line</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Brand Project 3" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>UrbanFit</h3>
+                        <p>Rebranding for fitness apparel company</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <!-- <section class="testimonials">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Clients Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "TechAlchemist transformed our brand identity completely. The strategic approach to our logo and visual system resulted in a 40% increase in brand recall within just three months of launch."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="author-img">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, Nexa Financial</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "The scientific approach to our packaging design was revolutionary. Our shelf conversion rates improved by 28% after implementing their recommendations on color psychology and typography."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="author-img">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Marketing Director, VitaFoods</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Engineer Your Distinct Brand Identity?</h2>
+            <p>Our systematic approach ensures your brand stands out and gets remembered.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn">Start Your Project</a>
+                <a href="#" class="btn btn-outline">Request Consultation</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Footer Styles */
+        :root {
+            --primary: #64ffda;
+            --primary-dark: #0a192f;
+            --dark: #172a45;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .footer-container {
+            width: 100%;
+            background-color: #0a192f;
+           
+            color: white;
+            padding: 80px 0 0;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .footer-logo-text span {
+            color: var(--primary);
+        }
+        
+        .footer-about p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-heading:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-link-item {
+            margin-bottom: 15px;
+        }
+        
+        .footer-link {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+        }
+        
+        .footer-link i {
+            margin-right: 10px;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+        
+        .footer-contact-info {
+            list-style: none;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        .contact-text {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        .contact-text a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-newsletter p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 0.95rem;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+        }
+        
+        .newsletter-btn {
+            padding: 0 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 25px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-bottom-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-copyright {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .footer-legal-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .footer-legal-link {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-legal-link:hover {
+            color: var(--primary);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-heading {
+                margin-bottom: 20px;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+            }
+            
+            .footer-legal-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-container {
+                padding: 60px 0 0;
+            }
+            
+            .footer-bottom {
+                padding: 20px 0;
+                margin-top: 40px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-btn {
+                border-radius: 5px;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+
+
+        <!-- Footer -->
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="TechAlchemist Solns Favicon[1].png" alt="TechAlchemist Logo" class="footer-logo-img">
+                    <span class="footer-logo-text">Tech<span>Alchemist</span></span>
+                </div>
+                <p>Engineering digital excellence through rigorous application of computer science principles and systems thinking. We transform complex challenges into robust, scalable solutions.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links-container">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li class="footer-link-item"><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li class="footer-link-item"><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li class="footer-link-item"><a href="case-studies.html" class="footer-link"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+                    <li class="footer-link-item"><a href="blog.html" class="footer-link"><i class="fas fa-chevron-right"></i> Insights</a></li>
+                    <li class="footer-link-item"><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-services-container">
+                <h3 class="footer-heading">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="web-development.html" class="footer-link"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                    <li class="footer-link-item"><a href="Social Media Marketing.html" class="footer-link"><i class="fas fa-chevron-right"></i> Social Media Marketing</a></li>
+                    <li class="footer-link-item"><a href="Search Engine Optimization.html" class="footer-link"><i class="fas fa-chevron-right"></i> Search Engine Optimization</a></li>
+                    <li class="footer-link-item"><a href="CCTV & Security Systems.html" class="footer-link"><i class="fas fa-chevron-right"></i> CCTV & Security Systems</a></li>
+                    <li class="footer-link-item"><a href="Branding & Design.html" class="footer-link"><i class="fas fa-chevron-right"></i> Branding & Design</a></li>
+                    <li class="footer-link-item"><a href="More-Services.html" class="footer-link"><i class="fas fa-chevron-right"></i> More Services</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact-container">
+                <h3 class="footer-heading">Contact Us</h3>
+                <ul class="footer-contact-info">
+                    <li class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <div class="contact-text">
+                            Nairobi, Kenya<br>
+                            P.O. Box 12345-00100
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-phone-alt contact-icon"></i>
+                        <div class="contact-text">
+                            <a href="tel:+254713160899">+254 713 160 899</a><br>
+                            <a href="tel:+254720987654">+254 720 987 654</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div class="contact-text">
+                            <a href="mailto:info@techalchemist.co.ke">info@techalchemist.co.ke</a><br>
+                            <a href="mailto:support@techalchemist.co.ke">support@techalchemist.co.ke</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-clock contact-icon"></i>
+                        <div class="contact-text">
+                           24/7 Customer Support<br>
+                            Mon - Fri: 8:00 AM - 6:00 PM<br>
+                            Sat - Sun: 10:00 AM - 4:00 PM
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+               
+                <!-- <h3 class="footer-heading">Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest engineering insights, case studies, and technology updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p><small>We respect your privacy. Unsubscribe at any time.</small></p> -->
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-copyright">&copy; 2023 TechAlchemist Solutions. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#" class="footer-legal-link">Privacy Policy</a>
+                    <a href="#" class="footer-legal-link">Terms of Service</a>
+                    <a href="#" class="footer-legal-link">Cookies Policy</a>
+                    <a href="#" class="footer-legal-link">Security</a>
+                    <a href="#" class="footer-legal-link">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                // Here you would typically send the email to your server
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = '';
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
